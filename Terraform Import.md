@@ -1,3 +1,11 @@
+## Understanding Terraform Import
+```
+mkdir import && cd import
+```
+```
+vi import.tf
+```
+Add the given lines, by pressing "INSERT" 
 ```
 provider "aws" {
   region = "us-east-1"
@@ -11,4 +19,17 @@ resource "aws_instance" "test_instance" {
     name = "test_instance"
   }
 }
+```
+Save the file using "ESCAPE + :wq!"
+```
+terraform init
+```
+```
+terraform plan
+```
+```
+terraform apply
+```
+```
+terraform destroy
 ```
