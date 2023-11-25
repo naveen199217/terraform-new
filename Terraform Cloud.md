@@ -43,8 +43,8 @@
 * In tab 1, Select VCS (Version Control System) 
 * In tab 2, select Github
 * Once you click Github.com, a new window will popup. Sign into your GitHub account from there. Perform the verification and install Terraform on Git. 
-* Now, we have the GitHub account connected with Terraform cloud. In tab 3 choose the repository where Terraform configuration is present, in this case, its â€œTerraform-Cloudâ€.
-* In tab 4, Provide the name for the workspace of  your own choice and click the Create Workspaceâ€¯button. Once the workspace is created, you will see a success message in a popup. 
+* Now, we have the GitHub account connected with Terraform cloud. In tab 3 choose the repository where Terraform configuration is present, in this case, its Terraform-Cloud.
+* In tab 4, Provide the name for the workspace of  your own choice and click the Create Workspace button. Once the workspace is created, you will see a success message in a popup. 
 
 ### Task 4: Plan and Apply the changes 
 
@@ -55,10 +55,10 @@
 
 `AWS_SECRET_ACCESS_KEY = Your aws secret key`
 
-* Click onâ€¯Actionsâ€¯and Start new run and choose the option plan and apply
+* Click on New Run and choose the option plan and apply
 * Once Plan is successful, scroll down a bit, and it will wait for the confirmation/approval to apply the changes. Clickâ€¯Confirm & Apply 
 * Provide a message in the textbox and click on Confirm Plan 
-* You will see that terraform apply is happening. 
+* You will see that the terraform apply is happening. 
 * Verify that the resource has been created in your AWS Console 
 
 ### Task 5: Terminate the resources 
