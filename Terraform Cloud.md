@@ -13,27 +13,28 @@
 * Click on creating a new file
 * Name your file vars.tf
 * Add the following code
-  ```
+```
   variable "AWS_ACCESS_KEY"{}
   variable "AWS_SECRET_KEY"{}
-  ```
-* Click on commit new file.
-Add another file by clicking on add file dropdown and select create new file. 
-Name the file as instance.tf, Insert the below contents and commit the file. 
+```
+* Click on commit the new file.
+* Add another file by clicking on add file dropdown and select create new file. 
+* Name the file as instance.tf, Insert the below contents and commit the file. 
+```
+  provider "aws" { 
+  region = "sa-east-1" 
+  access_key=var.AWS_ACCESS_KEY 
+  secret_key=var.AWS_SECRET_KEY 
+  } 
 
-provider "aws" { 
-region = "sa-east-1" 
-access_key=var.AWS_ACCESS_KEY 
-secret_key=var.AWS_SECRET_KEY 
-} 
-
-resource "aws_instance" "web" { 
-ami           = "ami-02dc8ad50da58fffd" 
-instance_type = "t3.micro" 
-tags = { 
-Name = "HelloWorld" 
-} 
-}  
+  resource "aws_instance" "web" { 
+  ami           = "*****ENTER THE AMI ID*****" 
+  instance_type = "t3.micro" 
+  tags = { 
+  Name = "Hello from Terraform Cloud" 
+  } 
+  }
+```
 
 Task 3: Create a new workspace
 =============================================================================
