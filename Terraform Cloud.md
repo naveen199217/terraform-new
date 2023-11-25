@@ -52,6 +52,7 @@
 * Click on add variable and provide the following details. Make sure you enable the sensitive check box. 
 
   `AWS_ACCESS_KEY = Your aws access key`
+  
   `AWS_SECRET_ACCESS_KEY = Your aws secret key`
 
 * Click on New Run and choose the option plan and apply
