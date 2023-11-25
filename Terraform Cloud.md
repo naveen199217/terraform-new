@@ -64,7 +64,7 @@
 ### Task 5: Terminate the resources 
 
 * On the settings tab, click on Destruction and Deletion 
-* Now, click onâ€¯Create Destroyâ€¯Plan. 
+* Now, click on `queue destroy plan`. 
 * Provide the Workspace name and click on Queue Destroy plan 
 * Now you will notice that queue is scheduled. The deletion queue has two stages. Plan and apply (to delete the infra) 
 * Approve to start the delete operation by clicking Confirm & Apply
