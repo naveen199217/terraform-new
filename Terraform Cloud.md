@@ -13,8 +13,10 @@
 * Click on creating a new file
 * Name your file vars.tf
 * Add the following code
-    `variable "AWS_ACCESS_KEY"{}` 
-    `variable "AWS_SECRET_KEY"{}`
+  ```
+  variable "AWS_ACCESS_KEY"{}
+  variable "AWS_SECRET_KEY"{}
+  ```
 * Click on commit new file.
 Add another file by clicking on add file dropdown and select create new file. 
 Name the file as instance.tf, Insert the below contents and commit the file. 
