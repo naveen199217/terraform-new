@@ -35,3 +35,9 @@ terraform apply
 ```
 terraform destroy
 ```
+```
+cd ..
+```
+```
+rm -rf import
+```
