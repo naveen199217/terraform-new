@@ -11,12 +11,14 @@ provider "aws" {
   region = "us-east-1"
 }   
 
-#terraform import aws_instance.test_instance i-0c94695f4d493269b
+#Execute the below command
+#terraform import aws_instance.test_instance <***Resource-ID***>
+
 resource "aws_instance" "test_instance" {
-  ami = "ami-0fc5d935ebf8bc3bc"
-  instance_type = "t2.micro"
+  ami = "<***AMI_ID OF THE EC2 Instance to be IMPORTED***>"
+  instance_type = "<***INSTANCE TYPE***>"
   tags = {
-    name = "test_instance"
+    name = "<TAGS if ANY / New Tags can be added as well>"
   }
 }
 ```
