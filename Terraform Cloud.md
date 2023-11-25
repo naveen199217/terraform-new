@@ -1,21 +1,21 @@
 ## Terraform Cloud
 
 ### Task 1: Create a Terraform Cloud Account
-
+* Create a Terraform Cloud Account and Login
+  
 ### Task 2: Create a new repo in Github
 
 * Sign in in Github
-
 * Click on New
-In the repository name: Enter "Terraform-Cloud"
-Click on Private
-Click on Create Repository
-Click on creating a new file
-Name your file vars.tf
-Add the following code
-variable "AWS_ACCESS_KEY"{} 
-variable "AWS_SECRET_KEY"{} 
-Click on commit new file.
+* In the repository name: Enter "Terraform-Cloud"
+* Click on Private
+* Click on Create Repository
+* Click on creating a new file
+* Name your file vars.tf
+* Add the following code
+    `variable "AWS_ACCESS_KEY"{}` 
+    `variable "AWS_SECRET_KEY"{}`
+* Click on commit new file.
 Add another file by clicking on add file dropdown and select create new file. 
 Name the file as instance.tf, Insert the below contents and commit the file. 
 
