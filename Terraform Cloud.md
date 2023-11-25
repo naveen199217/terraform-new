@@ -51,9 +51,8 @@
 * Now on the terraform cloud graphics, clickâ€¯Configure variables. In this demo, we will pass the credentials of AWS (Access key and secret key) to authenticate with users. 
 * Click on add variable and provide the following details. Make sure you enable the sensitive check box. 
 
-`AWS_ACCESS_KEY = Your aws access key`
-
-`AWS_SECRET_ACCESS_KEY = Your aws secret key`
+  `AWS_ACCESS_KEY = Your aws access key`
+  `AWS_SECRET_ACCESS_KEY = Your aws secret key`
 
 * Click on New Run and choose the option plan and apply
 * Once Plan is successful, scroll down a bit, and it will wait for the confirmation/approval to apply the changes. Clickâ€¯Confirm & Apply 
