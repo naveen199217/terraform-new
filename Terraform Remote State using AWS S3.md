@@ -18,11 +18,6 @@ cd ~
 mkdir S3-Lab && cd S3-Lab
 ```
 ```
-wget https://s3.ap-south-1.amazonaws.com/files.cloudthat.training/devops/terraform-essentials/remote_state_lab.tar.gz
-```
-```
-tar -zxvf remote_state_lab.tar.gz
-```
 ```
 cd remote-state-lab
 ```
@@ -30,19 +25,47 @@ cd remote-state-lab
 ls
 ```
 ```
-cat instance.tf
+vi instance.tf
 ```
 ```
-cat vars.tf
+resource "aws_instance" "terraform-remoteState" {
+  ami           = var.AMIS[var.AWS_REGION]
+  instance_type = "t2.nano"
+  provisioner "local-exec" {
+    command = "echo ${aws_instance.terraform-remoteState.private_ip} >> private_ips.txt"
+  }
+}
+
+output "ip" {
+  value = aws_instance.terraform-remoteState.public_ip
+}
 ```
 ```
 vi vars.tf
 ```
 In `vars.tf` file ensure to replace your `region` and Include your `region's Ubuntu AMI ID` to the list.
+```
+variable "AWS_REGION" {
+  default = "us-east-2"
+}
 
+variable "AMIS" {
+  type = map(string)
+  default = {
+    us-east-2 = "ami-0e83be366243f524a"
+    us-west-2 = "ami-02e7fad8336aa2c57"
+    eu-west-1 = "ami-029f9476"
+  }
+}
+```
 Once done, save the file and follow further steps.
 ```
-cat provider.tf
+vi provider.tf
+```
+```
+provider "aws" {
+  region = var.AWS_REGION
+}
 ```
 Now, Create a New Configuration File for storing "`terraform.tfstate`" file in the backend. (ie. `Amazon S3.`)
 
