@@ -23,6 +23,7 @@ mkdir remote-state-lab && cd remote-state-lab
 ```
 ls
 ```
+Create a New Configuration File and the below given lines, by pressing "INSERT"  
 ```
 vi instance.tf
 ```
