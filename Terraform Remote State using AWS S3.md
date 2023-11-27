@@ -23,10 +23,11 @@ mkdir remote-state-lab && cd remote-state-lab
 ```
 ls
 ```
-Create a New Configuration File and the below given lines, by pressing "INSERT"  
+Create a New Configuration File 
 ```
 vi instance.tf
 ```
+Add the below given lines, by pressing "INSERT"  
 ```
 resource "aws_instance" "terraform-remoteState" {
   ami           = var.AMIS[var.AWS_REGION]
@@ -40,6 +41,7 @@ output "ip" {
   value = aws_instance.terraform-remoteState.public_ip
 }
 ```
+Save the file using "ESCAPE + :wq!"
 ```
 vi vars.tf
 ```
