@@ -5,18 +5,80 @@
 cd /home/ubuntu/
 ```
 ```
-wget https://s3.ap-south-1.amazonaws.com/files.cloudthat.training/devops/terraform-essentials/lab_10_vpc_v0.13.tar.gz
-```
-```
-tar -xvf lab_10_vpc_v0.13.tar.gz
+mkdir lab_10_vpc
 ```
 ```
 cd lab_10_vpc/
 ls
 ```
-Now, Open the files one by one and replace your regions (**Ex:** ap-south-1) and for Availability Zones (**Ex:** ap-south-1a)
+Create vpc.tf
 ```
 vi vpc.tf
+```
+```
+# For Provider
+provider "aws" {
+  region = var.AWS_REGION
+}
+
+# For VPC
+resource "aws_vpc" "main" {
+    cidr_block = "10.0.0.0/16"
+    instance_tenancy = "default"
+    enable_dns_support = "true"
+    enable_dns_hostnames = "true"
+    enable_classiclink = "false"
+    tags = {
+        Name = "main"
+    }
+}
+
+# For Subnets
+resource "aws_subnet" "main-public-1" {
+    vpc_id = aws_vpc.main.id
+    cidr_block = "10.0.1.0/24"
+    map_public_ip_on_launch = "true"
+    availability_zone = "us-east-2a"
+    tags = {
+        Name = "main-public-1"
+    }
+}
+
+resource "aws_subnet" "main-private-1" {
+    vpc_id = aws_vpc.main.id
+    cidr_block = "10.0.4.0/24"
+    map_public_ip_on_launch = "true"
+    availability_zone = "us-east-2a"
+    tags = {
+        Name = "main-private-1"
+    }
+}
+
+# For Internet Gateway
+resource "aws_internet_gateway" "main-gw" {
+    vpc_id = aws_vpc.main.id
+    tags = {
+        Name = "main"
+    }
+} 
+
+# For Route Tables
+resource "aws_route_table" "main-public" {
+    vpc_id = aws_vpc.main.id
+    route {
+        cidr_block = "0.0.0.0/0"
+        gateway_id = aws_internet_gateway.main-gw.id
+    }
+    tags = {
+        Name = "main-public-1"
+    }
+}
+
+# For Route associations public
+resource "aws_route_table_association" "main-public-1-a" {
+    subnet_id = aws_subnet.main-public-1.id
+    route_table_id = aws_route_table.main-public.id
+}
 ```
 In `vpc.tf` file Add `#` in front of line 12, ie... `enable_classiclink = "false"` and replace your `AZs`
 ```
