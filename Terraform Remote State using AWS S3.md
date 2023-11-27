@@ -18,7 +18,7 @@ cd ~
 mkdir S3-Lab && cd S3-Lab
 ```
 ```
-cd remote-state-lab
+mkdir remote-state-lab && cd remote-state-lab
 ```
 ```
 ls
