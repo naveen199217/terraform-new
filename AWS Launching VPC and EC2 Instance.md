@@ -11,7 +11,7 @@ mkdir lab_10_vpc
 cd lab_10_vpc/
 ls
 ```
-Create vpc.tf
+Create vpc.tf and Add # in front of enable_classiclink = "false" and replace your AZs
 ```
 vi vpc.tf
 ```
