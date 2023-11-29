@@ -135,7 +135,7 @@ terraform destroy
 Once Done remove the `EC2-lab` Directory.
 ```
 cd ~
-rm -rf EC2-lab
+rm -rf variables-lab
 
 ```
 
