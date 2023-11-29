@@ -210,3 +210,8 @@ Use the `terraform destroy` command for cleaning the infrastructure used in this
 terraform destroy
 ```
 Finally, verify that the resources are deleted in the Console.
+```
+cd ~
+rm -rf EC2-lab
+```
+
