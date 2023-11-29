@@ -2,27 +2,47 @@
 
 ### Task-1: Using output feature of Terraform to get the IP Address of EC2 Instance
 ```
-cd /home/ubuntu/
+mkdir output-variable-lab && cd output-variable-lab
 ```
 ```
-wget https://s3.ap-south-1.amazonaws.com/files.cloudthat.training/devops/terraform-essentials/output-variable-lab-v0.13.5.tar.gz
-```
-```
-tar -xvf output-variable-lab-v0.13.5.tar.gz
-```
-```
-cd output-variable-lab/
 ls
 ```
+Create the instance.tf file
 ```
-cat instance.tf
-```
-```
-cat output.tf
+vi instance.tf
 ```
 ```
-cat vars.tf
+provider "aws" {
+  region     = var.AWS_REGION
+}
+
+resource "aws_instance" "example" {
+  ami           = var.AMIS[var.AWS_REGION]
+  instance_type = "t2.micro"
+  provisioner "local-exec" {
+    command = "echo ${aws_instance.example.private_ip} >> private_ips.txt"
+  }
+}
 ```
+Save the changes
+```
+vi output.tf
+```
+```
+output "Public_ip" {
+  description = "Public IP of the instance"
+  value = aws_instance.example.public_ip
+}
+
+output "Private_ip" {
+  sensitive = true
+  description = "Private IP of the instance"
+  value = aws_instance.example.private_ip
+
+}
+```
+Save the file
+
 In `vars.tf` file delete all the lines and add the below code. Also, ensure to replace your `region` and Include your `region's Ubuntu AMI ID` to the list.
 ```
 vi vars.tf
