@@ -43,7 +43,7 @@ output "Private_ip" {
 ```
 Save the file
 
-In `vars.tf` file delete all the lines and add the below code. Also, ensure to replace your `region` and Include your `region's Ubuntu AMI ID` to the list.
+In `vars.tf` ensure to replace your `region` and Include your `region's Ubuntu AMI ID` to the list.
 ```
 vi vars.tf
 ```
