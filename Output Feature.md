@@ -96,7 +96,5 @@ Once done, remove the directory and Zip file using the `rm -rf` command below.
 cd ~
 rm -rf output-variable-lab
 ```
-```
-rm -rf output-variable-lab-v0.13.5.tar.gz
-```
+
 
