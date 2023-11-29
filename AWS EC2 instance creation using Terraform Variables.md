@@ -3,9 +3,6 @@
 
 ### Task-1: Create EC2 instance using variables 
 ```
-cd /home/ubuntu/EC2-lab/
-```
-```
 mkdir variables-lab && cd variables-lab/
 ```
 Now Create four Files ie. `provider.tf,` `vars.tf,` `terraform.tfvars,` `instance.tf.`
