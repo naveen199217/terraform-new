@@ -35,7 +35,7 @@ resource "aws_instance" "instance2" {
 }
 
 resource "aws_ebs_volume" "db_ebs" {
-  availability_zone = "us-west-1a"
+  availability_zone = "us-east-1a"
   size              = 8
   tags = local.custom_tags
 }
