@@ -163,3 +163,7 @@ terraform apply
 ```
 terraform destroy
 ```
+```
+cd ~
+rm -rf lab4
+```
