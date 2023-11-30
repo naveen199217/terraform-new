@@ -10,7 +10,7 @@ mkdir task1 && cd task1
 ```
 vi local.tf
 ```
-Add the given lines, by pressing "INSERT" 
+Add the given lines, by pressing "INSERT" and replace ******ENTER THE AMI VALUE******** with actual values
 ```
 provider "aws" {
   region     = "us-east-1"
