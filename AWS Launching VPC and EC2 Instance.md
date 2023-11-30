@@ -80,11 +80,14 @@ resource "aws_route_table_association" "main-public-1-a" {
     route_table_id = aws_route_table.main-public.id
 }
 ```
-In `vpc.tf` file Add `#` in front of line 12, ie... `enable_classiclink = "false"` and replace your `AZs`
+Save the file using "ESCAPE + :wq!"
 ```
-cat nat.tf
+vi nat.tf
 ```
-No Updated need in `nat.tf`
+```
+
+```
+No Updated need in `nat.tf`. Save the file using "ESCAPE + :wq!"
 ```
 vi vars.tf
 ```
