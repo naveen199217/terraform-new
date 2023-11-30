@@ -217,7 +217,7 @@ Add the given lines, by pressing "INSERT" and replace your `region` and add your
 ##### The first 3 lines are already present. you can add the remaining lines.
 ```
 variable "AWS_REGION" {
-  default = "us-east-2"
+  default = "us-east-1"
 }
 
 variable "PATH_TO_PUBLIC_KEY" {
@@ -227,7 +227,7 @@ variable "PATH_TO_PUBLIC_KEY" {
 variable "AMIS" {
   type = map(string)
   default = {
-    us-east-2 = "ami-059d836af932792c3"
+    us-east-1 = "ami-0230bd60aa48260c6"
     us-west-2 = "ami-0a7d051a1c4b54f65"
     eu-west-1 = "ami-04c58523038d79132"
   }
