@@ -311,6 +311,3 @@ Remove the directory and Zip file using `rm -rf`
 cd ..
 rm -rf lab_10_vpc
 ```
-```
-rm -rf lab_10_vpc_v0.13.tar.gz
-```
