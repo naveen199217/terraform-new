@@ -252,9 +252,10 @@ Also, to See the `Public IP` of the newly created EC2 Instance use the below com
 ```
 terraform state show aws_instance.example | grep public_ip
 ```
-To `SSH` into newly launched EC2, run below command.
+To `SSH` into newly launched EC2, run below command. Use either of the below depending on which OS you have used.
 ```
-ssh -i mykey -l ubuntu <Your Public IP>
+#ssh -i mykey ubuntu@<Your Public IP>
+ssh -i mykey ec2-user@<Your Public IP>
 ```
 Once verified, `Exit` from Instance.
 
