@@ -87,7 +87,7 @@ vi nat.tf
 ```
 # For NAT Gateway
 resource "aws_eip" "nat" {
-    vpc = true
+#    vpc = true
 }
 
 resource "aws_nat_gateway" "nat-gw" {
