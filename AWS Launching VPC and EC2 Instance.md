@@ -144,7 +144,7 @@ Create a `new File` for EC2 Instance
 ```
 vi instance.tf 
 ```
-Add the given lines, by pressing "INSERT" and replace `Yourname-Lab5-ec2` with your name.
+Add the given lines, by pressing "INSERT" and replace `Yourname-ec2` with your name.
 ```
 resource "aws_instance" "example" {
   ami           = var.AMIS[var.AWS_REGION]
@@ -156,7 +156,7 @@ resource "aws_instance" "example" {
   # the public SSH key
   key_name = aws_key_pair.mykeypair.key_name
   tags = {
-    Name = "Yourname-Lab5-ec2"
+    Name = "Yourname-ec2"
   }
 }
 ```
