@@ -5,10 +5,10 @@
 cd /home/ubuntu/
 ```
 ```
-mkdir lab_10_vpc
+mkdir lab_vpc
 ```
 ```
-cd lab_10_vpc/
+cd lab_vpc/
 ls
 ```
 Create vpc.tf and Add # in front of enable_classiclink = "false" and replace your AZs
@@ -309,5 +309,5 @@ terraform destroy -auto-approve
 Remove the directory and Zip file using `rm -rf`
 ```
 cd ..
-rm -rf lab_10_vpc
+rm -rf lab_vpc
 ```
