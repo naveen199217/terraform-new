@@ -47,6 +47,7 @@ output "warning" {
 ```
 terraform init
 ```
+```
 vi provider.tf
 ```
 ```
