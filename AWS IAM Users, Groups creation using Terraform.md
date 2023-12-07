@@ -11,27 +11,56 @@ vi iam.tf
 ```
 Copy and paste the below Code to create users and group also replace your `region`
 ```
+# group definition
+resource "aws_iam_group" "administrators" {
+  name = "administrators"
+}
+
+resource "aws_iam_policy_attachment" "administrators-attach" {
+  name       = "administrators-attach"
+  groups     = [aws_iam_group.administrators.name]
+  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
+}
+
+# user
+resource "aws_iam_user" "admin1" {
+  name = "admin1"
+}
+
+resource "aws_iam_user" "admin2" {
+  name = "admin2"
+}
+
+resource "aws_iam_group_membership" "administrators-users" {
+  name = "administrators-users"
+  users = [
+    aws_iam_user.admin1.name,
+    aws_iam_user.admin2.name,
+  ]
+  group = aws_iam_group.administrators.name
+}
+
+output "warning" {
+  value = "WARNING: make sure you're not using the AdministratorAccess policy for other users/groups/roles. If this is the case, don't run terraform destroy, but manually unlink the created resources"
+}
+```
+```
+terraform init
+```
+vi provider.tf
+```
+```
 provider "aws" {
-  region = "us-east-1"
+  region = var.AWS_REGION
 }
-
-resource "aws_iam_group" "example_group" {
-  name = "infosys"
+```
+```
+vi vars.tf
+```
+```
+variable "AWS_REGION" {
+  default = "us-east-2"
 }
-
-resource "aws_iam_user" "example_user" {
-  for_each = toset(["user1", "user2", "user3", "user4", "user5", "user6", "user7", "user8", "user9", "user10"])
-
-  name = each.key
-}
-
-resource "aws_iam_user_group_membership" "example_membership" {
-  for_each = aws_iam_user.example_user
-
-  user   = each.value.name
-  groups = [aws_iam_group.example_group.name]
-}
-
 ```
 ```
 terraform init
