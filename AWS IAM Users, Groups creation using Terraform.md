@@ -9,8 +9,17 @@ Create a new `iam.tf` file to define your IAM resources.
 ```
 vi iam.tf
 ```
-Copy and paste the below Code to create users and group also replace your `region`
+Copy and paste the below Code to create users and group. 
 ```
+# user
+resource "aws_iam_user" "admin1" {
+  name = "admin1"
+}
+
+resource "aws_iam_user" "admin2" {
+  name = "admin2"
+}
+
 # group definition
 resource "aws_iam_group" "administrators" {
   name = "administrators"
@@ -20,15 +29,6 @@ resource "aws_iam_policy_attachment" "administrators-attach" {
   name       = "administrators-attach"
   groups     = [aws_iam_group.administrators.name]
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
-}
-
-# user
-resource "aws_iam_user" "admin1" {
-  name = "admin1"
-}
-
-resource "aws_iam_user" "admin2" {
-  name = "admin2"
 }
 
 resource "aws_iam_group_membership" "administrators-users" {
