@@ -11,7 +11,7 @@ mkdir lab_vpc
 cd lab_vpc/
 ls
 ```
-Create vpc.tf and Add # in front of enable_classiclink = "false" and replace your AZs
+Create vpc.tf and replace your AZs
 ```
 vi vpc.tf
 ```
@@ -27,7 +27,6 @@ resource "aws_vpc" "main" {
     instance_tenancy = "default"
     enable_dns_support = "true"
     enable_dns_hostnames = "true"
-    enable_classiclink = "false"
     tags = {
         Name = "main"
     }
