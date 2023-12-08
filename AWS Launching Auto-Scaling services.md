@@ -5,7 +5,7 @@
 cd /home/ubuntu/
 ```
 ```
-wget https://s3.ap-south-1.amazonaws.com/files.cloudthat.training/devops/terraform-essentials/lab_14_autoscaling.tar.gz
+wget http://s3.ap-south-1.amazonaws.com/files.cloudthat.training/devops/terraform-essentials/lab_14_autoscaling.tar.gz
 ```
 ```
 tar -zxvf lab_14_autoscaling.tar.gz
@@ -15,19 +15,13 @@ cd lab_14_autoscaling/
 ls
 ```
 ```
-cat autoscaling.tf
+vi autoscaling.tf
 ```
+Update the names/tags to include your name
 ```
-cat autoscalingpolicy.tf
+vi autoscalingpolicy.tf
 ```
-```
-vi vpc.tf
-```
-In `vpc.tf` file Add `#` in front of line 7, ie... `enable_classiclink = "false"` and replace your `AZs` for `3 public Subnets` and `3 Private Subnets`
-```
-vi vars.tf
-```
-In `vars.tf` file replace your `region` and Include your `region's AMI ID` in the list.
+Update the names/tags to include your name
 ```
 ssh-keygen -f mykey
 ls
