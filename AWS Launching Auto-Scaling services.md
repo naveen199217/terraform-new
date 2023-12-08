@@ -23,7 +23,6 @@ vi autoscalingpolicy.tf
 ```
 Update the names/tags to include your name
 ```
-```
 vi vpc.tf
 ```
 Comment out #enable_classiclink   = "false"
