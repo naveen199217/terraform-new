@@ -213,12 +213,8 @@ vi vars.tf
 ```
 Add the given lines, by pressing "INSERT" and replace your `region` and add your `Region's AMI` to the list.
 
-##### The first 3 lines are already present. you can add the remaining lines.
+##### The first 3 lines are already present. Add the remaining lines below it.
 ```
-variable "AWS_REGION" {
-  default = "us-east-1"
-}
-
 variable "PATH_TO_PUBLIC_KEY" {
   default = "mykey.pub"
 }
