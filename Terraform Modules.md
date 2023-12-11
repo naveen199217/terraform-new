@@ -382,7 +382,7 @@ Now, Create a key pair. The same public key will be used in the new EC2 Instance
 ssh-keygen -f mykey
 ```
 ```
-cd ~ && cd terraform-modules
+cd ../..
 tree
 ```
 ```
