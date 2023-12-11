@@ -167,6 +167,44 @@ vi variables.tf
 * `Change subnet id` Use any available subnets from AZ `a or b`. (**Ex:** subnet-086dd80df2e64b56b)
 
 Then, Save it
+```hcl
+variable "region" {
+    default = "ca-central-1"
+} 
+variable "sg_vpcid" {
+    default = "<<Your VPC ID in ca-central-1 region>>"
+}
+variable "from_port" {
+    default = 22
+}
+variable "to_port" {
+    default = 22
+}
+variable  "sg_name" {
+    default = "terraform-sgp"
+}
+variable "ami_id" {
+    default = "ami-0e28822503eeedddc"
+}
+variable "ins_type" {
+    default = "t2.micro"
+}
+variable sub_id {
+    default = "<<Your Subnet ID in ca-central-1 region>>"
+}
+variable key_name {
+    default = "my-key-pair"
+}
+variable from_port2 {
+    default = 80
+}
+variable to_port2 {
+    default = 80
+}
+variable public_key {
+    default = "mykey.pub"
+}
+```
 
 Now, Create a key pair. The same public key will be used in the new EC2 Instance.
 ```
