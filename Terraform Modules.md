@@ -241,6 +241,23 @@ output "ec2_id" {
   value = aws_instance.example.id
 }
 ```
+```
+vi vars.tf 
+```
+```hcl
+ariable "aws_region"{
+}
+variable "ami_id"{
+}
+variable "instance_type"{
+}
+variable "subnet_id"{
+}
+variable "security_group"{
+}
+variable "key_name"{
+}
+```
 Now, Create a key pair. The same public key will be used in the new EC2 Instance.
 ```
 ssh-keygen -f mykey
