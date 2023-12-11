@@ -214,7 +214,33 @@ cd modules
 ```
 ls
 ```
+```
+mkdir ec2  key-pair  security-grp
+```
+```
+cd ec2
+```
+```
+vi instance.tf
+```
+```hcl
+resource "aws_instance" "example" {
+    ami = var.ami_id
+    instance_type = var.instance_type
+    subnet_id = var.subnet_id
+    vpc_security_group_ids = [var.security_group]
+    key_name = var.key_name
 
+    tags = {
+      Name = "Terraform-Created"
+    }
+    
+}
+
+output "ec2_id" {
+  value = aws_instance.example.id
+}
+```
 Now, Create a key pair. The same public key will be used in the new EC2 Instance.
 ```
 ssh-keygen -f mykey
