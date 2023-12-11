@@ -3,9 +3,9 @@
 ### Task 1: Create a Terraform Cloud Account
 
 * Create a Terraform Cloud Account and Login
-  ```
-  https://app.terraform.io/session
-  ```
+```
+https://app.terraform.io/session](https://flow.idp.hashicorp.com/login?login_challenge=10dd46b4d1f247588c334a3f97ae09ff
+```
   
 ### Task 2: Create a new repo in Github
 
