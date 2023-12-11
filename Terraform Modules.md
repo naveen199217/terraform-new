@@ -88,7 +88,7 @@ In this example, you've instantiated the `s3_bucket` module, passing values for 
 Terraform modules are a powerful way to enhance code reusability, streamline infrastructure provisioning, and maintain well-organized infrastructure as code projects. They shine in scenarios with numerous resources and configurations, offering a structured approach to managing infrastructure.
 
 
-## Creating AWS resources using terraform modules
+## Task 1 : Creating AWS resources using terraform modules
 ```
 cd /home/ubuntu/
 ```
