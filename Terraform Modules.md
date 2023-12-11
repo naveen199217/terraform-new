@@ -141,21 +141,16 @@ module "my_ec2" {
     key_name = module.my_key.key-name
 
 }
-```
-```
-tree
-```
-Cat all files to see the module structure
-```
-vi main.tf
-```
-Add the below code after block `module "my_security_group"`
-```hcl
+
 output "secgrpid" {
   description = "Newly created sec grp"
   value       = module.my_security_group.sgid
 }
 ```
+```
+tree
+```
+Cat all files to see the module structure
 ```
 cat provider.tf
 ```
