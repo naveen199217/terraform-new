@@ -150,11 +150,15 @@ output "secgrpid" {
 ```
 tree
 ```
-Cat all files to see the module structure
 ```
-cat provider.tf
+vi provider.tf
 ```
 **Note:** No change needed in `provider.tf`
+```hcl
+provider "aws" {
+  region = var.region
+}
+```
 ```
 vi variables.tf 
 ```
