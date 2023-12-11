@@ -52,7 +52,7 @@ https://app.terraform.io/app
 
 ### Task 4: Plan and Apply the changes 
 
-* Now on the terraform cloud graphics, clickâ€¯Configure variables. In this demo, we will pass the credentials of AWS (Access key and secret key) to authenticate with users. 
+* Now on the terraform cloud graphics, click Configure variables. In this demo, we will pass the credentials of AWS (Access key and secret key) to authenticate with users. 
 * Click on add variable and provide the following details. Make sure you enable the sensitive check box. 
 
   `AWS_ACCESS_KEY = Your aws access key`
