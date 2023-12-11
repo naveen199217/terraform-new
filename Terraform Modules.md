@@ -102,6 +102,7 @@ wget https://s3.ap-south-1.amazonaws.com/files.cloudthat.training/devops/terrafo
 tar -xvf terraform-modules.tar.gz
 ```
 ```
+mkdir terraform-modules
 cd terraform-modules
 ```
 ```
