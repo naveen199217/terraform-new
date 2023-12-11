@@ -112,7 +112,7 @@ Cat all files to see the module structure
 vi main.tf
 ```
 Add the below code after block `module "my_security_group"`
-```
+```hcl
 output "secgrpid" {
   description = "Newly created sec grp"
   value       = module.my_security_group.sgid
