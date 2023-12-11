@@ -42,6 +42,7 @@ https://app.terraform.io/app
 
 ### Task 3: Create a new workspace
 
+* Create a new organization
 * Click on create a new workspace
 * In tab 1, Select VCS (Version Control System) 
 * In tab 2, select Github
