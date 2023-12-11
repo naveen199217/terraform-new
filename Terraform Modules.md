@@ -168,39 +168,51 @@ vi variables.tf
 
 Then, Save it
 ```hcl
+
 variable "region" {
     default = "ca-central-1"
 } 
+
 variable "sg_vpcid" {
     default = "<<Your VPC ID in ca-central-1 region>>"
 }
+
 variable "from_port" {
     default = 22
 }
+
 variable "to_port" {
     default = 22
 }
+
 variable  "sg_name" {
     default = "terraform-sgp"
 }
+
 variable "ami_id" {
     default = "ami-0e28822503eeedddc"
 }
+
 variable "ins_type" {
     default = "t2.micro"
 }
+
 variable sub_id {
     default = "<<Your Subnet ID in ca-central-1 region>>"
 }
+
 variable key_name {
     default = "my-key-pair"
 }
+
 variable from_port2 {
     default = 80
 }
+
 variable to_port2 {
     default = 80
 }
+
 variable public_key {
     default = "mykey.pub"
 }
@@ -301,9 +313,11 @@ cd security-grp
 vi sg.tf
 ```
 ```hcl
+
 provider "aws" {
   region = var.aws_region
 }
+
 resource "aws_security_group" "allow-ssh" {
     vpc_id = var.vpc_id
     name = var.sg_name
@@ -333,6 +347,32 @@ resource "aws_security_group" "allow-ssh" {
 
 output "sgid" {
   value = aws_security_group.allow-ssh.id
+}
+
+```
+```
+vi vars.tf
+```
+```hcl
+variable "aws_region" {
+}
+
+variable "vpc_id" {
+}
+
+variable "from_port" {
+}
+
+variable "to_port" {
+}
+
+variable "from_port2" {
+}
+
+variable "to_port2" {
+}
+
+variable "sg_name" {
 }
 
 ```
