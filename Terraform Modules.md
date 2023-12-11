@@ -108,6 +108,8 @@ cd terraform-modules
 vi main.tf
 ```
 ```hcl
+# TO Create Security Group
+
 module "my_security_group" {
     source ="./modules/security-grp"
     aws_region = var.region
