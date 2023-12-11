@@ -293,6 +293,49 @@ variable "PATH_TO_PUBLIC_KEY" {
 variable "key_name" {
 }
 ```
+```
+cd ..
+cd security-grp
+```
+```
+vi sg.tf
+```
+```hcl
+provider "aws" {
+  region = var.aws_region
+}
+resource "aws_security_group" "allow-ssh" {
+    vpc_id = var.vpc_id
+    name = var.sg_name
+    description = "Security group that allows ssh and all egress traffic"
+    egress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+    ingress {
+        from_port = var.from_port
+        to_port = var.to_port
+        protocol = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+    ingress {
+        from_port = var.from_port2
+        to_port = var.to_port2
+        protocol = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+    tags = {
+        Name = "allow-ssh"
+    }
+}
+
+output "sgid" {
+  value = aws_security_group.allow-ssh.id
+}
+
+```
 Now, Create a key pair. The same public key will be used in the new EC2 Instance.
 ```
 ssh-keygen -f mykey
