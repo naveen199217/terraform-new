@@ -106,119 +106,6 @@ mkdir terraform-modules
 cd terraform-modules
 ```
 ```
-vi main.tf
-```
-```hcl
-# TO Create Security Group
-
-module "my_security_group" {
-    source ="./modules/security-grp"
-    aws_region = var.region
-    vpc_id = var.sg_vpcid
-    from_port = var.from_port
-    to_port = var.to_port
-    from_port2 = var.from_port2
-    to_port2 = var.to_port2
-    sg_name = var.sg_name
-}
-
-# TO Create Key-Pair
-
-module "my_key" {
-    key_name = var.key_name
-    source = "./modules/key-pair"
-    PATH_TO_PUBLIC_KEY = var.public_key
-}
-
-# TO Create EC2 Instance
-
-module "my_ec2" {
-    source = "./modules/ec2"
-    aws_region = var.region
-    ami_id = var.ami_id
-    instance_type = var.ins_type
-    subnet_id = var.sub_id
-    security_group = module.my_security_group.sgid
-    key_name = module.my_key.key-name
-
-}
-
-output "secgrpid" {
-  description = "Newly created sec grp"
-  value       = module.my_security_group.sgid
-}
-```
-```
-tree
-```
-```
-vi provider.tf
-```
-**Note:** No change needed in `provider.tf`
-```hcl
-provider "aws" {
-  region = var.region
-}
-```
-```
-vi variables.tf 
-```
-**Note:** Replace the `Region` Default `VPC ID,` `AMI Id` and `Subnet ID` from your Allocated region in `variable.tf` file.
-* `Change vpc_id` to default VPC in your region (**Ex:** vpc-0e608033e14b01c3c)
-* `Change subnet id` Use any available subnets from AZ `a or b`. (**Ex:** subnet-086dd80df2e64b56b)
-
-Then, Save it
-```hcl
-
-variable "region" {
-    default = "ca-central-1"
-} 
-
-variable "sg_vpcid" {
-    default = "<<Your VPC ID in ca-central-1 region>>"
-}
-
-variable "from_port" {
-    default = 22
-}
-
-variable "to_port" {
-    default = 22
-}
-
-variable  "sg_name" {
-    default = "terraform-sgp"
-}
-
-variable "ami_id" {
-    default = "ami-0e28822503eeedddc"
-}
-
-variable "ins_type" {
-    default = "t2.micro"
-}
-
-variable sub_id {
-    default = "<<Your Subnet ID in ca-central-1 region>>"
-}
-
-variable key_name {
-    default = "my-key-pair"
-}
-
-variable from_port2 {
-    default = 80
-}
-
-variable to_port2 {
-    default = 80
-}
-
-variable public_key {
-    default = "mykey.pub"
-}
-```
-```
 mkdir modules
 ```
 ```
@@ -384,6 +271,119 @@ ssh-keygen -f mykey
 ```
 cd ../..
 tree
+```
+```
+vi main.tf
+```
+```hcl
+# TO Create Security Group
+
+module "my_security_group" {
+    source ="./modules/security-grp"
+    aws_region = var.region
+    vpc_id = var.sg_vpcid
+    from_port = var.from_port
+    to_port = var.to_port
+    from_port2 = var.from_port2
+    to_port2 = var.to_port2
+    sg_name = var.sg_name
+}
+
+# TO Create Key-Pair
+
+module "my_key" {
+    key_name = var.key_name
+    source = "./modules/key-pair"
+    PATH_TO_PUBLIC_KEY = var.public_key
+}
+
+# TO Create EC2 Instance
+
+module "my_ec2" {
+    source = "./modules/ec2"
+    aws_region = var.region
+    ami_id = var.ami_id
+    instance_type = var.ins_type
+    subnet_id = var.sub_id
+    security_group = module.my_security_group.sgid
+    key_name = module.my_key.key-name
+
+}
+
+output "secgrpid" {
+  description = "Newly created sec grp"
+  value       = module.my_security_group.sgid
+}
+```
+```
+tree
+```
+```
+vi provider.tf
+```
+**Note:** No change needed in `provider.tf`
+```hcl
+provider "aws" {
+  region = var.region
+}
+```
+```
+vi variables.tf 
+```
+**Note:** Replace the `Region` Default `VPC ID,` `AMI Id` and `Subnet ID` from your Allocated region in `variable.tf` file.
+* `Change vpc_id` to default VPC in your region (**Ex:** vpc-0e608033e14b01c3c)
+* `Change subnet id` Use any available subnets from AZ `a or b`. (**Ex:** subnet-086dd80df2e64b56b)
+
+Then, Save it
+```hcl
+
+variable "region" {
+    default = "ca-central-1"
+} 
+
+variable "sg_vpcid" {
+    default = "<<Your VPC ID in ca-central-1 region>>"
+}
+
+variable "from_port" {
+    default = 22
+}
+
+variable "to_port" {
+    default = 22
+}
+
+variable  "sg_name" {
+    default = "terraform-sgp"
+}
+
+variable "ami_id" {
+    default = "ami-0e28822503eeedddc"
+}
+
+variable "ins_type" {
+    default = "t2.micro"
+}
+
+variable sub_id {
+    default = "<<Your Subnet ID in ca-central-1 region>>"
+}
+
+variable key_name {
+    default = "my-key-pair"
+}
+
+variable from_port2 {
+    default = 80
+}
+
+variable to_port2 {
+    default = 80
+}
+
+variable public_key {
+    default = "mykey.pub"
+}
 ```
 ```
 terraform init
