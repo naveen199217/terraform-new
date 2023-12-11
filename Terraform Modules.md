@@ -105,6 +105,42 @@ tar -xvf terraform-modules.tar.gz
 cd terraform-modules
 ```
 ```
+vi main.tf
+```
+```hcl
+module "my_security_group" {
+    source ="./modules/security-grp"
+    aws_region = var.region
+    vpc_id = var.sg_vpcid
+    from_port = var.from_port
+    to_port = var.to_port
+    from_port2 = var.from_port2
+    to_port2 = var.to_port2
+    sg_name = var.sg_name
+}
+
+# TO Create Key-Pair
+
+module "my_key" {
+    key_name = var.key_name
+    source = "./modules/key-pair"
+    PATH_TO_PUBLIC_KEY = var.public_key
+}
+
+# TO Create EC2 Instance
+
+module "my_ec2" {
+    source = "./modules/ec2"
+    aws_region = var.region
+    ami_id = var.ami_id
+    instance_type = var.ins_type
+    subnet_id = var.sub_id
+    security_group = module.my_security_group.sgid
+    key_name = module.my_key.key-name
+
+}
+```
+```
 tree
 ```
 Cat all files to see the module structure
