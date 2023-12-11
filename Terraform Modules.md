@@ -264,6 +264,35 @@ variable "security_group"{
 variable "key_name"{
 }
 ```
+```
+cd ..
+cd key-pair/
+```
+```
+vi key.tf
+```
+```hcl
+resource "aws_key_pair" "mykeypair" {
+    key_name = var.key_name
+    public_key =  file(var.PATH_TO_PUBLIC_KEY)
+}
+
+
+output "key-name"{
+value = aws_key_pair.mykeypair.key_name
+
+}
+```
+```
+vi vars.tf
+```
+```hcl
+variable "PATH_TO_PUBLIC_KEY" {
+} 
+
+variable "key_name" {
+}
+```
 Now, Create a key pair. The same public key will be used in the new EC2 Instance.
 ```
 ssh-keygen -f mykey
