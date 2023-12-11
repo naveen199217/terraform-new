@@ -333,11 +333,11 @@ Then, Save it
 ```hcl
 
 variable "region" {
-    default = "ca-central-1"
+    default = "us-east-1"
 } 
 
 variable "sg_vpcid" {
-    default = "<<Your VPC ID in ca-central-1 region>>"
+    default = "vpc-0145545ee19d71389"
 }
 
 variable "from_port" {
@@ -353,7 +353,7 @@ variable  "sg_name" {
 }
 
 variable "ami_id" {
-    default = "ami-0e28822503eeedddc"
+    default = "ami-0fc5d935ebf8bc3bc"
 }
 
 variable "ins_type" {
@@ -361,7 +361,7 @@ variable "ins_type" {
 }
 
 variable sub_id {
-    default = "<<Your Subnet ID in ca-central-1 region>>"
+    default = "subnet-0881026ede3d83d8f"
 }
 
 variable key_name {
