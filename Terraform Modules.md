@@ -208,6 +208,12 @@ variable public_key {
 ```
 mkdir modules
 ```
+```
+cd modules
+```
+```
+ls
+```
 
 Now, Create a key pair. The same public key will be used in the new EC2 Instance.
 ```
