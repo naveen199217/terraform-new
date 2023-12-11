@@ -3,6 +3,9 @@
 ### Task 1: Create a Terraform Cloud Account
 
 * Create a Terraform Cloud Account and Login
+  ```
+  https://app.terraform.io/session
+  ```
   
 ### Task 2: Create a new repo in Github
 
