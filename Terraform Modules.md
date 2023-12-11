@@ -398,3 +398,7 @@ terraform apply -auto-approve
 ```
 terraform destroy -auto-approve
 ```
+```
+cd ..
+rm -rf terraform-modules
+```
