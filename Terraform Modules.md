@@ -107,12 +107,7 @@ cd terraform-modules
 ```
 ```
 mkdir modules
-```
-```
 cd modules
-```
-```
-ls
 ```
 ```
 mkdir ec2  key-pair  security-grp
