@@ -259,13 +259,13 @@ variable "sg_name" {
 }
 
 ```
-Now, Create a key pair. The same public key will be used in the new EC2 Instance.
-```
-ssh-keygen -f mykey
-```
 ```
 cd ../..
 tree
+```
+Now, Create a key pair. The same public key will be used in the new EC2 Instance.
+```
+ssh-keygen -f mykey
 ```
 ```
 vi main.tf
