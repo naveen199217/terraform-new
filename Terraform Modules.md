@@ -205,6 +205,9 @@ variable public_key {
     default = "mykey.pub"
 }
 ```
+```
+mkdir modules
+```
 
 Now, Create a key pair. The same public key will be used in the new EC2 Instance.
 ```
