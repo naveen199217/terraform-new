@@ -1,4 +1,8 @@
 ## Creating Key Pair and passing the key when Creating an EC2 Instance
+```
+mkdir capstone && cd capstone
+```
+
 
 ### Task-1: Creating Key-Pair
 ```
