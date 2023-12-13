@@ -60,7 +60,8 @@ resource "aws_instance" "ec2" {
 ```
 vi sg.tf
 ```
-```
+```hcl
+
 #Creating the security Group and enabling port 22 for ssh
 resource "aws_security_group" "terraform_sg" {
   name        = "Mehar-allow-ssh"
