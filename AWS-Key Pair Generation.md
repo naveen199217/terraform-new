@@ -2,6 +2,13 @@
 
 ### Task-1: Creating Key-Pair
 ```
+vi provider.tf
+```
+```
+provider "aws" {
+  region = "us-east-1"
+}
+```
 vi key.tf
 ```
 ```hcl
