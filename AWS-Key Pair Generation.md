@@ -50,3 +50,12 @@ resource "aws_instance" "ec2" {
   key_name = "capstone-key"
 }
 ```
+```
+terraform init
+```
+```
+terraform plan 
+```
+```
+terraform apply -auto-approve
+```
