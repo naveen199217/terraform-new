@@ -1,4 +1,4 @@
-## Creating Key Pair and using the Key to Create an EC2 Instance
+## Creating Key Pair and passing the key when Creating an EC2 Instance
 
 ### Task-1: Creating Key-Pair
 ```
@@ -35,4 +35,15 @@ resource "local_file" "mykey_public" {
   filename = "capstone-key.pub"
 }
 
+```
+### Task-2: Passing the key when Creating an EC2 Instance
+```
+vi instance.tf
+```
+```hcl
+resource "aws_instance" "ec2" {
+  instance_type = "t2.micro"
+  ami = "ami-0fc5d935ebf8bc3bc"
+  key_name = "capstone-key"
+}
 ```
