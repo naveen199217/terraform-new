@@ -48,10 +48,38 @@ resource "local_file" "mykey_public" {
 vi instance.tf
 ```
 ```hcl
+
 resource "aws_instance" "ec2" {
   instance_type = "t2.micro"
   ami = "ami-0fc5d935ebf8bc3bc"
   key_name = "capstone-key"
+  depends_on = [ aws_key_pair.capstone-key ]    #The Key should be created first
+  vpc_security_group_ids = [aws_security_group.terraform_sg.id]  #attaching a security group for ssh
+}
+```
+```
+vi sg.tf
+```
+```
+#Creating the security Group and enabling port 22 for ssh
+resource "aws_security_group" "terraform_sg" {
+  name        = "Mehar-allow-ssh"
+  description = "security group that allows ssh and all egress traffic"
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    Name = "Mehar-allow-ssh"
+  }
 }
 ```
 ```
