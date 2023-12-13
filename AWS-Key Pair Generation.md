@@ -96,7 +96,7 @@ terraform apply -auto-approve
 ssh -i capstone-key ubuntu@IP_ADDRESS
 ```
 You might get the below error
-@   WARNING: UNPROTECTED PRIVATE KEY FILE!   @
+
 Permissions 0775 for 'capstone-key' are too open.
 It is required that your private key files are NOT accessible by others.
 This private key will be ignored.
