@@ -93,6 +93,9 @@ terraform plan
 terraform apply -auto-approve
 ```
 ```
+ssh -i capstone-key ubuntu@IP_ADDRESS
+```
+```
 terraform destroy -auto-approve
 ```
 ```
