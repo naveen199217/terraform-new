@@ -55,6 +55,8 @@ resource "aws_instance" "ec2" {
   key_name = "capstone-key"
   depends_on = [ aws_key_pair.capstone-key ]    #The Key should be created first
   vpc_security_group_ids = [aws_security_group.terraform_sg.id]  #attaching a security group for ssh
+  tags = {
+    name = Ansible Server}
 }
 ```
 ```
