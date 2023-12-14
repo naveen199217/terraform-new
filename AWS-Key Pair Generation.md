@@ -51,7 +51,7 @@ vi instance.tf
 
 resource "aws_instance" "ec2" {
   instance_type = "t2.micro"
-  ami = "ami-0fc5d935ebf8bc3bc"
+  ami = "ami-023c11a32b0207432"
   key_name = "capstone-key"
   depends_on = [ aws_key_pair.capstone-key ]    #The Key should be created first
   vpc_security_group_ids = [aws_security_group.terraform_sg.id]  #attaching a security group for ssh
