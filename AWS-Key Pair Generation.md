@@ -95,7 +95,7 @@ terraform plan
 terraform apply -auto-approve
 ```
 ```
-ssh -i capstone-key ubuntu@IP_ADDRESS
+ssh -i capstone-key ec2-user@IP_ADDRESS
 ```
 You might get the below error
 
